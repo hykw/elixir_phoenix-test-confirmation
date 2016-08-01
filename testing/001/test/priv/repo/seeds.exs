@@ -1,0 +1,27 @@
+# Script for populating the database. You can run it as:
+#
+#     mix run priv/repo/seeds.exs
+#
+# Inside the script, you can read and write to any of your
+# repositories directly:
+#
+#     Test.Repo.insert!(%Test.SomeModel{})
+#
+# We recommend using the bang functions (`insert!`, `update!`
+# and so on) as they will fail if something goes wrong.
+
+
+Test.Repo.insert!(%Test.Test {
+  code: 0,
+  str: "1",
+})
+
+
+str = String.duplicate("1", 1024)
+
+Enum.each(1..1024, fn(x) ->
+  Test.Repo.insert!(%Test.Test {
+    code: x,
+    str: str,
+  })
+end)
