@@ -1,0 +1,2 @@
+%{"cachex": {:hex, :cachex, "1.2.2", "4a74564b6611fae2478d7604f1159749c9c6d1e884c849218db29e8d11a61bba", [:mix], [{:eternal, "~> 1.0", [hex: :eternal, optional: false]}]},
+  "eternal": {:hex, :eternal, "1.0.3", "daa23eabd206065f455cee62aee436fbd97a8dcab1e50be4ee68f9b218e8610a", [:mix], []}}
