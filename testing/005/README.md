@@ -5,7 +5,7 @@
 - Elixir のプロジェクトを作成
   - `mix new test`
 
-  - `vi config/config.exs`
+- `vi config/config.exs`
   - `mix ua_inspector.download.databases`
   - `mix ua_inspector.download.short_code_maps`
 
@@ -51,7 +51,6 @@ $ iex -S mix
   type: "tablet"},
  os: %UAInspector.Result.OS{name: "iOS", platform: :unknown, version: "9.3.4"},
  user_agent: "Mozilla/5.0 (iPad; CPU OS 9_3_4 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Versio\n      n/9.0 Mobile/13G35 Safari/601.1"}
-"tablet"
 
 
 > Enum.map([ua_python_request, ua_pc_chrome, ua_sp_iphone, ua_tablet_ipad], fn(ua) ->
