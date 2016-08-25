@@ -49,3 +49,14 @@ Finished in 0.05 seconds
 
 Worker の init で sleep するとそこで処理がブロッキングする。
 また、:timer.sleep/1 を削除しても実行の順序が変わることは無い。
+
+supervisor tree の場合も状況は同じ。そのため下記のように Endpoint の前の worker が sleep すると、endpoint の起動、すなわち Web 接続ができるようになるまで待たされることになる。これを応用して、起動時のキャッシュのウォームアップのような処理を endpoint の前の worker の init() で実行することで、キャッシュ（など）の準備ができるまで Web 接続を受け付けない、ということが可能になる。
+
+```elixir
+    children = [
+      worker(Test.Worker, []),
+
+      supervisor(Test.Endpoint, []),
+      supervisor(NeoSmslife.Repo, []),
+    ]
+```
