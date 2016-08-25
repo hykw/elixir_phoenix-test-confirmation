@@ -58,3 +58,12 @@ $ iex -S mix
 end)
 ["desktop", "desktop", "smartphone", "tablet"]
 ```
+
+```elixir
+> ua = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+> UAInspector.parse(ua)
+%UAInspector.Result.Bot{category: "Search bot", name: "Googlebot",
+ producer: %UAInspector.Result.BotProducer{name: "Google Inc.",
+  url: "http://www.google.com"}, url: "http://www.google.com/bot.html",
+ user_agent: "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"}
+```
